@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="10P-A|Win32">
+      <Configuration>10P-A</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{75ea011b-0cf7-426e-800f-efdc99b2ccc9}</ProjectGuid>
+    <Keyword>MakeFileProj</Keyword>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='10P-A|Win32'" Label="Configuration">
+    <ConfigurationType>Makefile</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings" />
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='10P-A|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='10P-A|Win32'">
+    <NMakeOutput>STM32-10A.exe</NMakeOutput>
+    <NMakePreprocessorDefinitions>USE_STDPERIPH_DRIVER, STM32F10X_HD</NMakePreprocessorDefinitions>
+    <IncludePath>..\..\CMSIS;..\..\USER;..\..\FWlib\inc;..\..\FWlib\src;..\BSP;..\User;..\..\10P-A</IncludePath>
+    <NMakeBuildCommandLine>"E:\Program Files\keil\UV4\Uv4.exe " -b ..\STM32-10A.uvproj -t "10P-A" -j0 -o Build.log</NMakeBuildCommandLine>
+  </PropertyGroup>
+  <ItemDefinitionGroup>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <None Include="..\..\CMSIS\startup\startup_stm32f10x_hd.s" />
+    <None Include="..\readme.txt" />
+    <None Include="Readme.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\FWlib\src\stm32f10x_rcc.c" />
+    <ClCompile Include="..\..\FWlib\src\stm32f10x_gpio.c" />
+    <ClCompile Include="..\..\FWlib\src\misc.c" />
+    <ClCompile Include="..\..\FWlib\src\stm32f10x_exti.c" />
+    <ClCompile Include="..\..\FWlib\src\stm32f10x_adc.c" />
+    <ClCompile Include="..\..\FWlib\src\stm32f10x_dma.c" />
+    <ClCompile Include="..\..\FWlib\src\stm32f10x_usart.c" />
+    <ClCompile Include="..\..\FWlib\src\stm32f10x_i2c.c" />
+    <ClCompile Include="..\..\FWlib\src\stm32f10x_spi.c" />
+    <ClCompile Include="..\..\FWlib\src\stm32f10x_tim.c" />
+    <ClCompile Include="..\..\CMSIS\core_cm3.c" />
+    <ClCompile Include="..\..\CMSIS\system_stm32f10x.c" />
+    <ClCompile Include="..\BSP\stm32_ub_adc.c" />
+    <ClCompile Include="..\BSP\stm32_ub_dma_usart1.c" />
+    <ClCompile Include="..\BSP\stm32_ub_led.c" />
+    <ClCompile Include="..\BSP\stm32_ub_cd4051.c" />
+    <ClCompile Include="..\BSP\stm32_ub_relay.c" />
+    <ClCompile Include="..\BSP\Tsystick.c" />
+    <ClCompile Include="..\User\adc_filter.c" />
+    <ClCompile Include="..\User\input_process.c" />
+    <ClCompile Include="..\User\main.c" />
+    <ClCompile Include="..\User\malloc.c" />
+    <ClCompile Include="..\User\queue_process.c" />
+    <ClCompile Include="..\User\task.c" />
+    <ClCompile Include="..\User\stm32f10x_it.c" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

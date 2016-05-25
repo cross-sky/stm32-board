@@ -1,0 +1,123 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="源文件">
+      <UniqueIdentifier>{3d1a0e18-bb93-4794-ac1d-1c16b1606739}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="头文件">
+      <UniqueIdentifier>{b3965722-723c-4f20-bf72-c48f08ab99b2}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="项目说明">
+      <UniqueIdentifier>{678fa5b0-937f-4ac2-aa8b-27eb2e386df6}</UniqueIdentifier>
+      <Extensions>txt</Extensions>
+    </Filter>
+    <Filter Include="源文件\STARTUPCODE">
+      <UniqueIdentifier>{d19415a3-5fec-43c3-82fa-bc85cb2ac248}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\FWlib">
+      <UniqueIdentifier>{5c89f5aa-3936-4d9f-bd26-64b8260660a3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\CMSIS">
+      <UniqueIdentifier>{c4ec264b-4df3-4978-a14b-7e9aeb6aeede}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\Readme">
+      <UniqueIdentifier>{9f31aa0d-bb1d-4202-a7cb-2209e7053f0f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\BSP">
+      <UniqueIdentifier>{834b922e-ed8d-4df0-8759-0a947b333c5a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\User">
+      <UniqueIdentifier>{389e8286-f66a-4f34-86e3-108cbae573e1}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\FWlib\src\stm32f10x_rcc.c">
+      <Filter>源文件\FWlib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\FWlib\src\stm32f10x_gpio.c">
+      <Filter>源文件\FWlib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\FWlib\src\misc.c">
+      <Filter>源文件\FWlib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\FWlib\src\stm32f10x_exti.c">
+      <Filter>源文件\FWlib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\FWlib\src\stm32f10x_adc.c">
+      <Filter>源文件\FWlib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\FWlib\src\stm32f10x_dma.c">
+      <Filter>源文件\FWlib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\FWlib\src\stm32f10x_usart.c">
+      <Filter>源文件\FWlib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\FWlib\src\stm32f10x_i2c.c">
+      <Filter>源文件\FWlib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\FWlib\src\stm32f10x_spi.c">
+      <Filter>源文件\FWlib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\FWlib\src\stm32f10x_tim.c">
+      <Filter>源文件\FWlib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\CMSIS\core_cm3.c">
+      <Filter>源文件\CMSIS</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\CMSIS\system_stm32f10x.c">
+      <Filter>源文件\CMSIS</Filter>
+    </ClCompile>
+    <ClCompile Include="..\BSP\stm32_ub_led.c">
+      <Filter>源文件\BSP</Filter>
+    </ClCompile>
+    <ClCompile Include="..\BSP\Tsystick.c">
+      <Filter>源文件\BSP</Filter>
+    </ClCompile>
+    <ClCompile Include="..\User\main.c">
+      <Filter>源文件\User</Filter>
+    </ClCompile>
+    <ClCompile Include="..\User\task.c">
+      <Filter>源文件\User</Filter>
+    </ClCompile>
+    <ClCompile Include="..\User\stm32f10x_it.c">
+      <Filter>源文件\User</Filter>
+    </ClCompile>
+    <ClCompile Include="..\User\malloc.c">
+      <Filter>源文件\User</Filter>
+    </ClCompile>
+    <ClCompile Include="..\BSP\stm32_ub_cd4051.c">
+      <Filter>源文件\BSP</Filter>
+    </ClCompile>
+    <ClCompile Include="..\BSP\stm32_ub_relay.c">
+      <Filter>源文件\BSP</Filter>
+    </ClCompile>
+    <ClCompile Include="..\User\input_process.c">
+      <Filter>源文件\User</Filter>
+    </ClCompile>
+    <ClCompile Include="..\BSP\stm32_ub_adc.c">
+      <Filter>源文件\BSP</Filter>
+    </ClCompile>
+    <ClCompile Include="..\User\queue_process.c">
+      <Filter>源文件\User</Filter>
+    </ClCompile>
+    <ClCompile Include="..\BSP\stm32_ub_dma_usart1.c">
+      <Filter>源文件\BSP</Filter>
+    </ClCompile>
+    <ClCompile Include="..\User\adc_filter.c">
+      <Filter>源文件\BSP</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\CMSIS\startup\startup_stm32f10x_hd.s">
+      <Filter>源文件\STARTUPCODE</Filter>
+    </None>
+    <None Include="..\readme.txt">
+      <Filter>源文件\Readme</Filter>
+    </None>
+    <None Include="Readme.txt">
+      <Filter>项目说明</Filter>
+    </None>
+  </ItemGroup>
+</Project>

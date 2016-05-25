@@ -1,0 +1,86 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="LED-DEMO|Win32">
+      <Configuration>LED-DEMO</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{898c73bc-6eda-45f0-967b-51e1c1dbb21e}</ProjectGuid>
+    <Keyword>MakeFileProj</Keyword>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='LED-DEMO|Win32'" Label="Configuration">
+    <ConfigurationType>Makefile</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings" />
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='LED-DEMO|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='LED-DEMO|Win32'">
+    <NMakeOutput>STM32-DEMO.exe</NMakeOutput>
+    <NMakePreprocessorDefinitions>USE_STDPERIPH_DRIVER, STM32F10X_MD</NMakePreprocessorDefinitions>
+    <IncludePath>..\..\CMSIS;..\..\USER;..\..\FWlib\inc;..\..\FWlib\src;</IncludePath>
+    <NMakeBuildCommandLine>"E:\Program Files\keil\UV4\Uv4.exe " -b ..\STM32-DEMO.uvproj -t "LED-DEMO" -j0 -o Build.log</NMakeBuildCommandLine>
+  </PropertyGroup>
+  <ItemDefinitionGroup>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <None Include="..\..\CMSIS\startup\startup_stm32f10x_md.s" />
+    <None Include="..\..\readme.txt" />
+    <None Include="Readme.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\main.c" />
+    <ClCompile Include="..\stm32_ub_button.c" />
+    <ClCompile Include="..\stm32_ub_dma_usart1.c" />
+    <ClCompile Include="..\stm32_ub_eeprom.c" />
+    <ClCompile Include="..\stm32_ub_iic.c" />
+    <ClCompile Include="..\stm32_ub_lcd.c" />
+    <ClCompile Include="..\stm32_ub_led.c" />
+    <ClCompile Include="..\stm32f10x_it.c" />
+    <ClCompile Include="..\stm32_ub_menu.c" />
+    <ClCompile Include="..\stm32_ub_offstatus.c" />
+    <ClCompile Include="..\stm32_ub_params.c" />
+    <ClCompile Include="..\stm32_ub_pcf8563.c" />
+    <ClCompile Include="..\stm32_ub_wdog.c" />
+    <ClCompile Include="..\task.c" />
+    <ClCompile Include="..\Tsystick.c" />
+    <ClCompile Include="..\..\FWlib\src\stm32f10x_rcc.c" />
+    <ClCompile Include="..\..\FWlib\src\stm32f10x_gpio.c" />
+    <ClCompile Include="..\..\FWlib\src\misc.c" />
+    <ClCompile Include="..\..\FWlib\src\stm32f10x_exti.c" />
+    <ClCompile Include="..\..\FWlib\src\stm32f10x_adc.c" />
+    <ClCompile Include="..\..\FWlib\src\stm32f10x_dma.c" />
+    <ClCompile Include="..\..\FWlib\src\stm32f10x_usart.c" />
+    <ClCompile Include="..\..\FWlib\src\stm32f10x_i2c.c" />
+    <ClCompile Include="..\..\FWlib\src\stm32f10x_spi.c" />
+    <ClCompile Include="..\..\FWlib\src\stm32f10x_tim.c" />
+    <ClCompile Include="..\..\CMSIS\core_cm3.c" />
+    <ClCompile Include="..\..\CMSIS\system_stm32f10x.c" />
+    <ClCompile Include="..\UART1.c" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\lcd_code.h" />
+    <ClInclude Include="..\stdint.h" />
+    <ClInclude Include="..\stm32f10x_it.h" />
+    <ClInclude Include="..\stm32_ub_button.h" />
+    <ClInclude Include="..\stm32_ub_dma_usart1.h" />
+    <ClInclude Include="..\stm32_ub_eeprom.h" />
+    <ClInclude Include="..\stm32_ub_iic.h" />
+    <ClInclude Include="..\stm32_ub_lcd.h" />
+    <ClInclude Include="..\stm32_ub_menu.h" />
+    <ClInclude Include="..\stm32_ub_offstatus.h" />
+    <ClInclude Include="..\stm32_ub_params.h" />
+    <ClInclude Include="..\stm32_ub_pcf8563.h" />
+    <ClInclude Include="..\stm32_ub_wdog.h" />
+    <ClInclude Include="..\UART1.h" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

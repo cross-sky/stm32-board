@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='LED-DEMO|Win32'">
+    <LocalDebuggerCommand>E:\Program Files\keil\UV4\Uv4.exe </LocalDebuggerCommand>
+    <LocalDebuggerCommandArguments>-d STM32-DEMO.uvproj -t "LED-DEMO"</LocalDebuggerCommandArguments>
+    <LocalDebuggerWorkingDirectory>..\</LocalDebuggerWorkingDirectory>
+    <DebuggerFlavor>WindowsLocalDebugger</DebuggerFlavor>
+  </PropertyGroup>
+</Project>

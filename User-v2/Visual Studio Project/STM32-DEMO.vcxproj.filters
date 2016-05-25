@@ -1,0 +1,173 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="源文件">
+      <UniqueIdentifier>{024f1c20-0d17-417a-b639-1b07520b6dde}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="头文件">
+      <UniqueIdentifier>{2e8222ce-0812-4337-9346-6550dcecf8bd}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="项目说明">
+      <UniqueIdentifier>{cd52fc12-7a4f-4c47-849d-d80372eadcf5}</UniqueIdentifier>
+      <Extensions>txt</Extensions>
+    </Filter>
+    <Filter Include="源文件\STARTUPCODE">
+      <UniqueIdentifier>{93f47483-e76f-4372-99f9-9544ceaf189e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\USER">
+      <UniqueIdentifier>{75fb330f-3026-4273-9933-d75a7bb8b9a0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\FWlib">
+      <UniqueIdentifier>{13fe9527-ca18-4416-a008-5bf2d5176f93}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\CMSIS">
+      <UniqueIdentifier>{1b64d055-396a-468c-94a5-2da7e3088c98}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\Readme">
+      <UniqueIdentifier>{f0432228-ab78-49ea-ab83-aac3d3f607e5}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\main.c">
+      <Filter>源文件\USER</Filter>
+    </ClCompile>
+    <ClCompile Include="..\stm32_ub_led.c">
+      <Filter>源文件\USER</Filter>
+    </ClCompile>
+    <ClCompile Include="..\stm32f10x_it.c">
+      <Filter>源文件\USER</Filter>
+    </ClCompile>
+    <ClCompile Include="..\task.c">
+      <Filter>源文件\USER</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Tsystick.c">
+      <Filter>源文件\USER</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\FWlib\src\stm32f10x_rcc.c">
+      <Filter>源文件\FWlib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\FWlib\src\stm32f10x_gpio.c">
+      <Filter>源文件\FWlib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\FWlib\src\misc.c">
+      <Filter>源文件\FWlib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\FWlib\src\stm32f10x_exti.c">
+      <Filter>源文件\FWlib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\FWlib\src\stm32f10x_adc.c">
+      <Filter>源文件\FWlib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\FWlib\src\stm32f10x_dma.c">
+      <Filter>源文件\FWlib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\FWlib\src\stm32f10x_usart.c">
+      <Filter>源文件\FWlib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\FWlib\src\stm32f10x_i2c.c">
+      <Filter>源文件\FWlib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\FWlib\src\stm32f10x_spi.c">
+      <Filter>源文件\FWlib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\FWlib\src\stm32f10x_tim.c">
+      <Filter>源文件\FWlib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\CMSIS\core_cm3.c">
+      <Filter>源文件\CMSIS</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\CMSIS\system_stm32f10x.c">
+      <Filter>源文件\CMSIS</Filter>
+    </ClCompile>
+    <ClCompile Include="..\stm32_ub_iic.c">
+      <Filter>源文件\USER</Filter>
+    </ClCompile>
+    <ClCompile Include="..\stm32_ub_eeprom.c">
+      <Filter>源文件\USER</Filter>
+    </ClCompile>
+    <ClCompile Include="..\stm32_ub_pcf8563.c">
+      <Filter>源文件\USER</Filter>
+    </ClCompile>
+    <ClCompile Include="..\UART1.c">
+      <Filter>源文件\USER</Filter>
+    </ClCompile>
+    <ClCompile Include="..\stm32_ub_lcd.c">
+      <Filter>源文件\USER</Filter>
+    </ClCompile>
+    <ClCompile Include="..\stm32_ub_menu.c">
+      <Filter>源文件\USER</Filter>
+    </ClCompile>
+    <ClCompile Include="..\stm32_ub_params.c">
+      <Filter>源文件\USER</Filter>
+    </ClCompile>
+    <ClCompile Include="..\stm32_ub_offstatus.c">
+      <Filter>源文件\USER</Filter>
+    </ClCompile>
+    <ClCompile Include="..\stm32_ub_dma_usart1.c">
+      <Filter>源文件\USER</Filter>
+    </ClCompile>
+    <ClCompile Include="..\stm32_ub_button.c">
+      <Filter>源文件\USER</Filter>
+    </ClCompile>
+    <ClCompile Include="..\stm32_ub_wdog.c">
+      <Filter>源文件\USER</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\CMSIS\startup\startup_stm32f10x_md.s">
+      <Filter>源文件\STARTUPCODE</Filter>
+    </None>
+    <None Include="..\..\readme.txt">
+      <Filter>源文件\Readme</Filter>
+    </None>
+    <None Include="Readme.txt">
+      <Filter>项目说明</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\stm32_ub_button.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\stm32_ub_iic.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\stm32_ub_eeprom.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\stdint.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\stm32_ub_pcf8563.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\UART1.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\stm32_ub_lcd.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\lcd_code.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\stm32_ub_menu.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\stm32_ub_params.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\stm32_ub_offstatus.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\stm32f10x_it.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\stm32_ub_wdog.h">
+      <Filter>源文件\USER</Filter>
+    </ClInclude>
+    <ClInclude Include="..\stm32_ub_dma_usart1.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
