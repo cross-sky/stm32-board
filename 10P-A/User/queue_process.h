@@ -37,6 +37,12 @@ enum{
 };
 
 typedef struct{
+	uint8_t onState;
+	uint8_t elecState;
+	uint8_t defrostState;
+}RunState_t;
+
+typedef struct{
 	uint8_t state;				//状态开或关
 	int16_t inTemper;			//吸气温度
 	int16_t outTemper;			//排气温度
@@ -56,7 +62,6 @@ typedef struct{
 
 	int16_t setDefrostMode;			//除霜控制方式	
 
-
 	int16_t setValveMode;			//电子膨胀阀控制方式
 	int16_t setValveManulSteps;		//手动电子膨胀阀步数
 	int16_t setSuperHeatLow5;		//环温5℃以下过热度
@@ -74,6 +79,7 @@ typedef struct{
 	int16_t waterOut;
 	int16_t waterBank;			//水箱温度
 	int16_t humidity;			//湿度
+	int16_t humiTemper;			//湿度模块读取的温度
 	int16_t environT;			//环温
 	int16_t innerTemper;		//内部温度
 	uint16_t valvesteps;
@@ -87,6 +93,7 @@ typedef struct{
 	ptrfuntion tempfun;
 	ptrfuntion functions;
 	ptrfuntion prefunction;
+	RunState_t runState;
 	CoreParams_t coreParems;
 }CoreProcess_t;
 

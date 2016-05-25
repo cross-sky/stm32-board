@@ -192,6 +192,13 @@ void vInpConvertRealNtc(void)
 	temp=(float)dataInput.finaNtc[ADC13_INTER]*0.00080;
 	temp = (1.43-temp)/0.0043+25;
 	dataInput.realNtc[ADC13_INTER]=temp*10;
+
+	//adc14-15
+	dataInput.realNtc[ADC14_humidity]=0.24414*dataInput.finaNtc[ADC14_humidity];
+	searchValue=dataInput.finaNtc[ADC15_humiTemper];
+	index=uADCSearchData50K(searchValue);
+	dataInput.realNtc[ADC15_humiTemper]=iADCTemperCalc10K(index,index);
+
 }
 
 void vINPAdcProcess(void)

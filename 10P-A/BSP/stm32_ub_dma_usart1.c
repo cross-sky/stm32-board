@@ -1,5 +1,8 @@
 #include "cominc.h"
 
+#define LenBit	2	//接收到的数据长度在第2位
+#define FrameBit	3//a[(a[2]+3)]==0xca 校验末尾
+
 UartProcess_t uartRxProcess={
 	0,0,
 	{
@@ -45,19 +48,21 @@ void vUartDataReturn(uint8_t funcode)
 	case FunCode1:
 		{
 			//返回开关机 除霜 电加热等动作接收命令
-			TxBuff[2]=0x01;
+			TxBuff[2]=0x02;
 			TxBuff[3]=funcode;
-			TxBuff[4]=FrameEndCode;
-			len=5;
+			TxBuff[4]=funcode;	//校验码
+			TxBuff[5]=FrameEndCode;
+			len=6;
 			break;
 		}
 	case FunCode2:
 		{
 			//返回发送参数设置接收命令
-			TxBuff[2]=0x01;
+			TxBuff[2]=0x02;
 			TxBuff[3]=funcode;
-			TxBuff[4]=FrameEndCode;
-			len=5;
+			TxBuff[4]=funcode;	//校验码
+			TxBuff[5]=FrameEndCode;//a[(a[2]+3)]==0xca
+			len=6;
 			break;
 		}
 	case FunCode3:
@@ -101,6 +106,13 @@ void vUartRxPopProcess(void)
 		//1.校验起始码；2.校验长度,校验累加码；3根据buf中功能码进行返回数据发送
 		buf=&(uartRxProcess.node[uartRxProcess.out].buff[0]);
 		len=uartRxProcess.node[uartRxProcess.out].length;
+
+		if (*(buf)!=FrameStart1Code)
+		{
+			buf+=1;
+			len-=1;
+		}
+
 		if (*(buf)==FrameStart1Code && *(buf+1)==FrameStart2Code)
 		{
 			i=*(buf+3);

@@ -56,7 +56,7 @@ int16_t iADCTemperCalc(uint16_t index,uint16_t adcValue)
 	}
 	else if(index<INDEX_MIN)
 	{
-		return ntc_adc[INDEX_MIN];
+		return ntc_adc[INDEX_MIN-1];
 	}
 	else{
 		 /*************************************************

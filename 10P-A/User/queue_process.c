@@ -91,6 +91,9 @@ void vInpSetCoreParamADC(int16_t *realNtc)
 	coreProcess.coreParems.waterBank=*(realNtc+ADC07_WTANK);
 	coreProcess.coreParems.innerTemper=*(realNtc+ADC13_INTER);
 
+	coreProcess.coreParems.humidity=*(realNtc+ADC14_humidity);
+	coreProcess.coreParems.humiTemper=*(realNtc+ADC15_humiTemper);
+
 	vQUEDefrostInTemper();
 }
 
@@ -131,6 +134,10 @@ void vQUEGetTemperParams(uint8_t *dst)
 	*dst++=coreProcess.coreParems.innerTemper>>8;
 	*dst++=coreProcess.coreParems.innerTemper&0xff;
 
+	*dst++=coreProcess.coreParems.humidity>>8;
+	*dst++=coreProcess.coreParems.humidity&0xff;
+	*dst++=coreProcess.coreParems.humiTemper>>8;
+	*dst++=coreProcess.coreParems.humiTemper&0xff;
 
 	*dst++=coreProcess.coreParems.adcDectectState>>8;
 	*dst++=coreProcess.coreParems.adcDectectState&0xff;

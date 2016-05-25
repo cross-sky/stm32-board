@@ -10,6 +10,7 @@ Event_t eventADC={
 
 uint8_t adcFlag=0;
 
+//1.头文件设置adc 2.adc数组初始化 3.adc规则组设置 4.转换成实际数据
 const IOControl adcInput[]={
 	{ADC01_AIN,		10	, GPIO_Pin_0, GPIOC,RCC_APB2Periph_GPIOC},  //channel10
 	{ADC02_AMI,		11	, GPIO_Pin_1, GPIOC,RCC_APB2Periph_GPIOC},	//channel11
@@ -24,6 +25,8 @@ const IOControl adcInput[]={
 	{ADC11_TCA,		0	, GPIO_Pin_0, GPIOA,RCC_APB2Periph_GPIOA},	//channel0
 	{ADC12_TCB,		1	, GPIO_Pin_1, GPIOA,RCC_APB2Periph_GPIOA},	//channel1
 //	{ADC13_INTER,	12	, GPIO_Pin_14, GPIOD,RCC_APB2Periph_GPIOD}	//channel16
+	{ADC14_humidity,		9	, GPIO_Pin_1, GPIOB,RCC_APB2Periph_GPIOB},	//channel1
+	{ADC15_humiTemper,		8	, GPIO_Pin_0, GPIOB,RCC_APB2Periph_GPIOB},	//channel1
 };
 
 void vADCInit(void)
@@ -42,7 +45,7 @@ void vADCInit(void)
 	NVIC_Init(&NVIC_InitStructure);
 
 	//手动开CLK吧，也就2个,注意开ADC的时钟树
-	RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOC|RCC_APB2Periph_GPIOA|RCC_APB2Periph_ADC1
+	RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOC|RCC_APB2Periph_GPIOB|RCC_APB2Periph_GPIOA|RCC_APB2Periph_ADC1
 		, ENABLE);
 	RCC_ADCCLKConfig(RCC_PCLK2_Div4);//<14MHz
 	RCC_AHBPeriphClockCmd(RCC_AHBPeriph_DMA1,ENABLE);
@@ -85,7 +88,7 @@ void vADCInit(void)
 	ADC_Init(ADC1, &ADC_InitStructure);
 
 	//cdmax-1 个外部adc，1个内部adc
-	for(name=0;name<ADCMAX-1; name++)
+	for(name=0;name<ADC13_INTER; name++)
 	{
 		//  /* ADC1 regular channel14 configuration */ 
 		//ADC_RegularChannelConfig(ADC1, ADC_Channel_14, 1, ADC_SampleTime_55Cycles5);
@@ -94,7 +97,13 @@ void vADCInit(void)
 	}
 
 	//1.Internal temp start
-	ADC_RegularChannelConfig(ADC1, ADC_Channel_16, ADCMAX, ADC_SampleTime_239Cycles5);
+	ADC_RegularChannelConfig(ADC1, ADC_Channel_16, ADC13_INTER+1, ADC_SampleTime_239Cycles5);
+
+	//adc14-15
+	for(name=ADC14_humidity-1;name<ADCMAX-1; name++)
+	{
+		ADC_RegularChannelConfig(ADC1, adcInput[name].nsoft, name+2, ADC_SampleTime_239Cycles5);
+	}
 
 	//need to enable
 	ADC_TempSensorVrefintCmd(ENABLE);

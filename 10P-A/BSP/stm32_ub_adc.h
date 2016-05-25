@@ -15,9 +15,9 @@ typedef enum{
 	ADC11_TCA,		//互感器A
 	ADC12_TCB,		//互感器B
 	ADC13_INTER,	//内部温度
+	ADC14_humidity,	//湿度	b1
+	ADC15_humiTemper,//湿度模块测量的温度 b0
 	ADCMAX,			//最大值
-	ADC13_,
-	ADC14_
 }ADC_t;
 
 #define ADC_CORE_MAX ADC07_WTANK	//结构体中使用，枚举变量不能放在struct中开辟数组

@@ -57,7 +57,7 @@ static const uint16_t	ntcAdc10K[]={
 
 #define ADC10K_ARRAY_NUM	(sizeof(ntcAdc10K)/sizeof(uint16_t))
 #define ADC10K_INDEX_MAX			(ADC10K_ARRAY_NUM-1)	// 数组下标的最大可用取值，对应 80℃采样值下标
-#define ADC10K_INDEX_MIN			(3)						//数组下标的最小可用取值，对应-10℃采样值下标
+#define ADC10K_INDEX_MIN			(1)						//数组下标的最小可用取值，对应-10℃采样值下标
 #define ADC10K_TEMPER_REF			(-20)					//温度基准点，即下标为0时对应的温度
 #define ADC10K_TEMP_LAST			80						//温度最后值，即数组最后一个对应的温度
 
